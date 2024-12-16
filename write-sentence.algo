@@ -1,0 +1,27 @@
+ALGORITHM JAVA.SCRIPT
+    function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        // L'élément à insérer dans la séquence triée
+        let current = arr[i];
+        let j = i - 1;
+
+        // Déplace les éléments plus grands que `current` vers la droite
+        while (j >= 0 && arr[j] > current) {
+            arr[j + 1] = arr[j]; // Décale l'élément
+            j--;
+        }
+
+        // Insère l'élément `current` à sa position correcte
+        arr[j + 1] = current;
+    }
+
+    return arr; // Retourne le tableau trié
+}
+
+// Exemple d'utilisation
+       let tableau = [8, 4, 6, 2, 9];
+       console.log("Tableau avant tri :", tableau);
+       let tableauTrie = insertionSort(tableau);
+       console.log("Tableau après tri :", tableauTrie);
+   
+ 
